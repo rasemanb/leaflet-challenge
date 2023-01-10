@@ -6,26 +6,25 @@ d3.json(queryUrl).then(function (data) {
   // Once we get a response, send the data.features object to the createFeatures function.
   createFeatures(data.features);
 
-
 function color(magnitude){
   
     if (magnitude > 5){
-        return "#ff3333"
+        return "#8B0000"
     }
     else if (magnitude > 4){
-        return "#ff6600"
+        return "#DC143C"
     }
     else if (magnitude > 3){
-        return "#ffff00"
+        return "#FF8C00"
     }
     else if (magnitude > 2){
-        return "#99ff33"
+        return "#FFA07A"
     }
     else if (magnitude > 1){
-        return "#009900"
+        return "#FFD700"
     }
     else {
-      return "#023b11"
+      return "#FAFAD2"
     }
 }
 
@@ -68,10 +67,6 @@ function createMap(earthquakes) {
   var street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   })
-
-//   var topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-//     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-//   });
 
   // Create a baseMaps object.
   var baseMaps = {
